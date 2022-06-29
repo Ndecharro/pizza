@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="categories"></div>
+     <div class="row">
+      {% for category in categories %}
+        <div class="col-md-4">
+            <a href="/categories/{{ category.name|lower }}" class="card">
+                <div class="card-body">
+                    <h4>{{ category.name }}</h4>
+                    <img src={{ category.image }}>
+                </div>
+            </a>
+        </div>
+      {% endfor %}
+     </div>
+    </div>
+
+
+    <style>
+        .card {
+            height: 400px;
+        }
+        img{
+            height: 300px;
+        }
+
+    </style>
+
+{% endblock %}
